@@ -1,0 +1,19 @@
+{
+  "name": "npr-news-scraper",
+  "version": "1.0.0",
+  "description": "A simple news scraper utilizing Cheerio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PReijerkerk/NPR-News-Scraper.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PReijerkerk/NPR-News-Scraper/issues"
+  },
+  "homepage": "https://github.com/PReijerkerk/NPR-News-Scraper#readme"
+}
