@@ -48,6 +48,8 @@ module.exports = (app)=>{
                 let result = {};
                 const title = $(this).children('.item-info').children('.title').children('a').text();
                 const link = $(this).children('.item-info').children('.title').children('a').attr('href');
+                console.log(link);
+                
                 const summary = $(this).children('.item-info').children('.teaser').children('a').text();
 
                 result.title = title;
