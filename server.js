@@ -34,6 +34,6 @@ require('./routes/routes.js')(app);
 
 //Start Server
 app.listen(PORT, ()=> {
-    console.log('App running on port ${PORT}');
+    console.log(`App running on port ${PORT}`);
 });
 

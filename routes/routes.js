@@ -91,7 +91,7 @@ module.exports = (app)=>{
     app.put('/article/:id', (req, res)=>{
         let id = req.params.id;
 
-        db.Article.findByIdAndUpdate(id, {$set: {saved: false}})
+        db.Article.findByIdAndUpdate(id, {$set: {saved: true}})
         .then((dbArticle)=>{
             res.json(dbArticle);
         })
