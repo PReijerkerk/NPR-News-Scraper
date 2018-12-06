@@ -48,8 +48,6 @@ module.exports = (app)=>{
                 let result = {};
                 const title = $(this).children('.item-info').children('.title').children('a').text();
                 const link = $(this).children('.item-info').children('.title').children('a').attr('href');
-                console.log(link);
-                
                 const summary = $(this).children('.item-info').children('.teaser').children('a').text();
 
                 result.title = title;
@@ -94,6 +92,7 @@ module.exports = (app)=>{
         db.Article.findByIdAndUpdate(id, {$set: {saved: true}})
         .then((dbArticle)=>{
             res.json(dbArticle);
+            console.log("Saved should be updated");
         })
         .catch((err)=>{
             res.json(err);

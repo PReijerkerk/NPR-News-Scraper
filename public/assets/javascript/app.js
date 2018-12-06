@@ -31,56 +31,56 @@ $(()=>{
         });
     };
 
-    const viewComments = function() {
-        let articleId = $(this).data('id');
+    // const viewComments = function() {
+    //     let articleId = $(this).data('id');
 
-    //Send request to grab the articles comments
-        $.ajax({
-            url: '/article/${articleId}',
-            method: 'GET'
-        })
-        .then((data)=> {
-            `$('.modal-content').html(
-            <div class="modal-header">
-                <h4 class="modal-title">${data.title}</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>)
-            </div>
-            <div class="modal-body">
-                <ul class="list-group"></ul>
-                <textarea name="comment" class="comment-content"></textarea>
-            </div>
-            <div class="modal-footer">
-                <button type="button" data-id="${data._id}" class="btn btn-primary btn-save-comment">Save Comment</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            )`;
+    // //Send request to grab the articles comments
+    //     $.ajax({
+    //         url: '/article/${articleId}',
+    //         method: 'GET'
+    //     })
+    //     .then((data)=> {
+    //         `$('.modal-content').html(
+    //         <div class="modal-header">
+    //             <h4 class="modal-title">${data.title}</h4>
+    //             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    //             <span aria-hidden="true">&times;</span>
+    //             </button>)
+    //         </div>
+    //         <div class="modal-body">
+    //             <ul class="list-group"></ul>
+    //             <textarea name="comment" class="comment-content"></textarea>
+    //         </div>
+    //         <div class="modal-footer">
+    //             <button type="button" data-id="${data._id}" class="btn btn-primary btn-save-comment">Save Comment</button>
+    //             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    //         </div>
+    //         )`;
 
-            let totalComments = data.comments.length;
+    //         let totalComments = data.comments.length;
 
-            //If there are no comments
-            if (totalComments == 0) {
-                let message = '<small class="text-muted">This article does not have any comments yet.</small>';
-                $('.modal-body').prepend(message);
-            }
-            //If comments exist
-            else {
-                let comments = data.comments;
-                //loops through comments and appends to modal
-                comments.forEach(comment =>{
-                    $('.list-group').append(
-                    <li class="list-group-item justify-content-between">
-                        ${comment.body}
-                        <span><i class="material-icons" data-id="${comment.+id}">delete_forever</i></span>
-                    </li>
-                    );
-                });
-            }
+    //         //If there are no comments
+    //         if (totalComments == 0) {
+    //             let message = '<small class="text-muted">This article does not have any comments yet.</small>';
+    //             $('.modal-body').prepend(message);
+    //         }
+    //         //If comments exist
+    //         else {
+    //             let comments = data.comments;
+    //             //loops through comments and appends to modal
+    //             comments.forEach(comment =>{
+    //                 `$('.list-group').append(
+    //                 <li class="list-group-item justify-content-between">
+    //                     ${comment.body}
+    //                     <span><i class="material-icons" data-id="${comment.id}">delete_forever</i></span>
+    //                 </li>
+    //                 )`;
+    //             });
+    //         }
 
-            $('.modal').modal('show');
-        });
-    };
+    //         $('.modal').modal('show');
+    //     });
+    // };
 
     const saveComment = function() {
         let id = $(this).data('id');
